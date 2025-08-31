@@ -258,3 +258,106 @@ button.loading {
 .divider::after {
   margin-left: 0.5rem;
 }
+
+
+/* Email Verification Styles */
+.verification-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.verification-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.verification-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.verification-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.verification-instructions {
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.verification-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.resend-btn {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.resend-btn:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.resend-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #5a6268;
+}
+
+.verification-tips {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.verification-tips h4 {
+  margin-top: 0;
+  color: #495057;
+}
+
+.verification-tips ul {
+  margin-bottom: 0;
+  padding-left: 1.5rem;
+}
+
+.verification-tips li {
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+}
+
+.verification-tips li:last-child {
+  margin-bottom: 0;
+}

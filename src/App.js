@@ -1,18 +1,25 @@
-// src/App.js
 import React from 'react';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Auth from './components/Auth';
 import Dashboard from './components/Dashboard';
+import EmailVerification from './components/EmailVerification';
 import './App.css';
 
 function AppContent() {
-  const { currentUser } = useAuth();
+  const { currentUser, isEmailVerified } = useAuth();
 
-  return (
-    <div className="App">
-      {currentUser ? <Dashboard /> : <Auth />}
-    </div>
-  );
+  // Show email verification page if user is logged in but not verified
+  if (currentUser && !isEmailVerified) {
+    return <EmailVerification />;
+  }
+
+  // Show dashboard if user is logged in and verified
+  if (currentUser && isEmailVerified) {
+    return <Dashboard />;
+  }
+
+  // Show auth pages if user is not logged in
+  return <Auth />;
 }
 
 function App() {
