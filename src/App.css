@@ -361,3 +361,109 @@ button.loading {
 .verification-tips li:last-child {
   margin-bottom: 0;
 }
+
+
+/* Loading spinner styles */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Button states */
+.resend-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Countdown timer style */
+.countdown-text {
+  font-weight: bold;
+  color: #007bff;
+  margin-left: 5px;
+}
+
+/* Enhanced verification card */
+.verification-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .verification-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .verification-actions {
+    flex-direction: column;
+  }
+  
+  .verification-actions button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Add to your existing App.css */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.resend-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.countdown-text {
+  font-weight: bold;
+  color: #007bff;
+  margin-left: 5px;
+}
+
+@media (max-width: 576px) {
+  .verification-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .verification-actions {
+    flex-direction: column;
+  }
+  
+  .verification-actions button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
