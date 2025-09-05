@@ -1,0 +1,165 @@
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+ .auth-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  ackground-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #757575;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+
+.divider::before {
+  margin-right: 0.5rem;
+}
+
+
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.divider::after {
+  margin-left: 0.5rem;
+}
+
+/* === Side-by-Side Inputs (First/Last Name) === */
+.auth-form .flex-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+/* === Input Container with Notch === */
+.auth-form .input-container {
+  position: relative;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px 0;
+  background-color: white;
+}
+
+
+
+/* === Input Container with Notch === */
+.auth-form .input-container {
+  position: relative;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px 0;
+  background-color: white;
+}
+
+
+/* === Label Positioned Outside Input === */
+.auth-form .input-label {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  font-size: 12px;
+  color: #a9a9a9;
+  background: white;
+  padding: 0 4px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+/* === Input Field (No Border) === */
+.auth-form .input-field {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+/* === Fix First/Last Name Alignment === */
+.auth-form div[style*="display: flex"] .input-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+/* === Black Button Style === */
+.auth-form .btn-secondary {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 1rem;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+
+.auth-form .btn-secondary:hover {
+  background-color: #1a1a1a;
+}
+.auth-form button:hover {
+  background-color: #0056b3;
+}
+
+.auth-link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+.auth-link:hover {
+  color: #0056b3;
+}
+

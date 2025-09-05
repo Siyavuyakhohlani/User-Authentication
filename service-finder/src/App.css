@@ -5,14 +5,17 @@
   padding: 0;
 }
 
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background-color: #f5f5f5;
 }
 
+
 .App {
   min-height: 100vh;
 }
+
 
 /* Auth Styles */
 .auth-container {
@@ -23,20 +26,23 @@ body {
   padding: 20px;
 }
 
+
 .auth-form {
-  background: white;
+  background: white ;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 550px;
 }
+
 
 .auth-form h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #333;
 }
+
 
 .auth-form input {
   width: 100%;
@@ -46,6 +52,7 @@ body {
   border-radius: 4px;
   font-size: 16px;
 }
+
 
 .auth-form button {
   width: 100%;
@@ -59,9 +66,53 @@ body {
   margin-top: 1rem;
 }
 
+
+/* === Black Button Style === */
+.auth-form .btn-secondary {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 1rem;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+
+.auth-form .btn-secondary:hover {
+  background-color: #1a1a1a;
+}
 .auth-form button:hover {
   background-color: #0056b3;
 }
+
+
+/* Button group wrapper */
+.btn-group {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 20px;              /* space between buttons */
+  align-items: flex-start; /* keeps them left aligned, optional */
+}
+
+
+/* Individual button overrides */
+.the.next.btn {
+  margin-left: 00px; /* move this one sideways */
+}
+
+
+.the.bck2lgn.btn {
+  background-color: black;
+  color: white;
+  width: 335px;
+}
+
+
+
 
 .auth-link {
   color: #007bff;
@@ -69,9 +120,11 @@ body {
   text-decoration: underline;
 }
 
+
 .auth-link:hover {
   color: #0056b3;
 }
+
 
 .error {
   color: #dc3545;
@@ -80,10 +133,12 @@ body {
   text-align: center;
 }
 
+
 /* Dashboard Styles */
 .dashboard {
   padding: 20px;
 }
+
 
 .dashboard header {
   display: flex;
@@ -96,10 +151,12 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 .dashboard h1 {
   color: #333;
   font-size: 1.5rem;
 }
+
 
 .dashboard button {
   padding: 10px 20px;
@@ -110,9 +167,11 @@ body {
   cursor: pointer;
 }
 
+
 .dashboard button:hover {
   background-color: #c82333;
 }
+
 
 /* Forgot Password Styles */
 .forgot-password-instructions {
@@ -122,41 +181,49 @@ body {
   font-size: 14px;
 }
 
+
 .forgot-password-link {
   text-align: center;
   margin: 1rem 0;
 }
 
+
 .forgot-password-link span {
-  color: #007bff;
+  color: black;
   cursor: pointer;
   text-decoration: underline;
 }
 
+
 .forgot-password-link span:hover {
   color: #0056b3;
 }
+
 
 .back-to-login {
   text-align: center;
   margin-top: 1.5rem;
 }
 
+
 .back-to-login .auth-link {
-  color: #007bff;
+  color:#007bff;
   cursor: pointer;
   text-decoration: underline;
 }
 
+
 .back-to-login .auth-link:hover {
   color: #0056b3;
 }
+
 
 /* Loading state for buttons */
 button.loading {
   opacity: 0.7;
   cursor: not-allowed;
 }
+
 
 /* Success message */
 .success {
@@ -165,6 +232,7 @@ button.loading {
   margin: 1rem 0;
   font-weight: 600;
 }
+
 
 /* Error message */
 .error {
@@ -175,36 +243,8 @@ button.loading {
 
 
 
-/* Google Sign-in Styles */
-.google-signin-container {
-  margin-bottom: 1.5rem;
-}
 
-.google-signin-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 12px;
-  background-color: #ffffff;
-  color: #757575;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.3s;
-}
 
-.google-signin-btn:hover {
-  background-color: #f5f5f5;
-}
-
-.google-logo {
-  width: 18px;
-  height: 18px;
-  margin-right: 12px;
-}
 
 /* Divider Styles */
 .divider {
@@ -216,6 +256,7 @@ button.loading {
   font-size: 14px;
 }
 
+
 .divider::before,
 .divider::after {
   content: '';
@@ -223,10 +264,118 @@ button.loading {
   border-bottom: 1px solid #ddd;
 }
 
+
 .divider::before {
   margin-right: 0.5rem;
 }
 
+
 .divider::after {
   margin-left: 0.5rem;
+}
+
+
+.forgot-password-link {
+  margin-left: 170px ;
+  margin-top: -30px;
+  padding-bottom: 10px;
+}
+
+
+.auth-form .btn-black {
+  background-color: black;
+  color: white;
+  width: 48 5px;
+  position: relative; /* Important! Makes badge position relative to this */
+  padding: 14px 24px; /* Optional: improves touch target */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+
+.beta-badge {
+  position: absolute;
+  top: -8px;
+  right: 10px;
+  background-color: #e91e63; /* Pink color */
+  color: white;
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-weight: bold;
+  z-index: 1; /* Ensures badge appears above other content */
+}
+
+
+/* === Input Container with Notch === */
+.auth-form .input-container {
+  position: relative;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px 0;
+  background-color: white;
+}
+
+
+/* === Label Positioned Outside Input === */
+.auth-form .input-label {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  font-size: 12px;
+  color: #a9a9a9;
+  background: white;
+  padding: 0 4px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+/* === Input Field (No Border) === */
+.auth-form .input-field {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+
+
+
+/* === Select Dropdown Arrow Fix === */
+.auth-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M7.2 4.8L5.4 6.6l-1.8-1.8L3 6.6l2.4 2.4 2.4-2.4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+
+/* === Side-by-Side Inputs (First/Last Name) === */
+.auth-form .flex-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+
+.auth-form .small-input {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* === Fix First/Last Name Alignment === */
+.auth-form div[style*="display: flex"] .input-container {
+  flex: 1;
+  min-width: 0;
 }
