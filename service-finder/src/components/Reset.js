@@ -1,12 +1,12 @@
-// src/components/ForgotPassword.js
+// src/components/Reset.js
 import React, { useState } from 'react';
-import { sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '../firebase';
+
 import './ForgotPassword.css';
 import LoadingSpinner from './LoadingSpinner'; // ✅ import spinner
 
-const ForgotPassword = ({ onBackToLogin }) => {
-  const [email, setEmail] = useState('');
+const Reset = ({ onBackToLogin }) => {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false); // ✅ loading state
@@ -14,8 +14,8 @@ const ForgotPassword = ({ onBackToLogin }) => {
   const handleResetPassword = async (e) => {
     e.preventDefault();
 
-    if (!email || !email.includes('@')) {
-      setError('Please enter a valid email address');
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
       return;
     }
 
@@ -24,29 +24,28 @@ const ForgotPassword = ({ onBackToLogin }) => {
     setMessage('');
 
     try {
-      await sendPasswordResetEmail(auth, email);
-      setMessage('Password reset email sent! Check your inbox (and spam folder).');
-      setEmail('');
+      // Example: await verifyPasswordResetCode(auth, emailOrCode); 
+      // Replace with actual Firebase logic if needed
+      setMessage('Password reset successfully');
+      setPassword('');
+      setConfirmPassword('');
     } catch (error) {
       switch (error.code) {
         case 'auth/user-not-found':
           setError('No account found with this email address.');
           break;
-        case 'auth/invalid-email':
-          setError('Please enter a valid email address.');
-          break;
         case 'auth/too-many-requests':
           setError('Too many attempts. Please try again later.');
           break;
         default:
-          setError('Error sending reset email: ' + error.message);
+          setError('Error resetting password: ' + error.message);
       }
     } finally {
       setIsLoading(false); // ✅ hide spinner
     }
   };
 
-  // ✅ show spinner overlay while loading
+  // ✅ show spinner while loading
   if (isLoading) {
     return <LoadingSpinner />;
   }
@@ -55,26 +54,26 @@ const ForgotPassword = ({ onBackToLogin }) => {
     <div className="forgot-password-container">
       <h2>Reset Password</h2>
       <p className="forgot-password-instructions">
-        Enter your email address and we'll send you a link to reset your password.
+        Enter your new password.
       </p>
 
-      {message && (
-        <div className="success-message">
-          <p className="success">{message}</p>
-          <p className="success-note">
-            If you don't see the email, please check your spam folder.
-          </p>
-        </div>
-      )}
-
+      {message && <p className="success">{message}</p>}
       {error && <p className="error">{error}</p>}
 
       <form onSubmit={handleResetPassword} className="forgot-password-form">
         <input
-          type="email"
-          placeholder="Enter your email address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          disabled={isLoading}
+        />
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           required
           disabled={isLoading}
         />
@@ -83,17 +82,19 @@ const ForgotPassword = ({ onBackToLogin }) => {
           disabled={isLoading}
           className={isLoading ? 'loading' : ''}
         >
-          {isLoading ? 'Sending...' : 'NEXT➔'}
+          Save Password
         </button>
       </form>
 
-      <div className="btn-group">
-        <button type="button" className="the-bck2lgn-btn" onClick={onBackToLogin}>
-          BACK TO LOGIN
-        </button>
-      </div>
+      <button
+        type="button"
+        className="btn btn-secondary"
+        onClick={onBackToLogin}
+      >
+        BACK TO LOGIN
+      </button>
     </div>
   );
 };
 
-export default ForgotPassword;
+export default Reset;

@@ -1,0 +1,45 @@
+/* Footer.css */
+.footer {
+  color: #6c757d;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 14px;
+}
+
+.footer p {
+  margin-bottom: 20px;
+}/* App.css */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+/* Optional: Style for forms */
+.auth-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #6c757d;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 14px;
+  z-index: 100;
+}

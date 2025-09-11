@@ -12,7 +12,7 @@ const Auth = () => {
       case 'register':
         return <Register onToggleForm={() => setAuthView('login')} />;
       case 'forgotPassword':
-        return <ForgotPassword onBackToLogin={() => setAuthView('login')} />;
+        return <ForgotPassword onBackToLogin={() => setAuthView('login')} onReset={() => setAuthView('Reset')} />;
       case 'login':
       default:
         return (

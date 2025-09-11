@@ -379,3 +379,19 @@ button.loading {
   flex: 1;
   min-width: 0;
 }
+
+/* src/App.css */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.loading-container p {
+  font-size: 16px;
+  color: #6c757d;
+  margin-top: 1rem;
+}
